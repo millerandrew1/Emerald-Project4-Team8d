@@ -299,6 +299,7 @@ export default function StudentCanvas({ activity }) {
     }
   };
   const handleCompile = async () => {
+    window.alert("Submitted " + Date());
     if (showConsole || showPlotter) {
       message.warning(
         'Close Serial Monitor and Serial Plotter before uploading your code'

@@ -34,6 +34,10 @@ const MentorActivityDetailModal = ({
   const [activityDetailsVisible, setActivityDetailsVisible] = useState(false)
   const [linkError, setLinkError] = useState(false)
   const [submitButton, setSubmitButton] = useState(0)
+  const [compilePoints, setCompilePoints] = useState(0)
+  const [readablePoints, setReadablePoints] = useState(0)
+  const [timePoints, setTimePoints] = useState(0)
+  const [totalPoints, setTotalPoints] = useState(0)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -245,6 +249,44 @@ const MentorActivityDetailModal = ({
             colorOffset={7}
           />
         </Form.Item>
+        <Form.Item>
+          <h3 id="subtitle">Rubric</h3>
+        </Form.Item>
+        <Form.Item id="form-label" label="Compile">
+          <Input.TextArea
+            onChange={e => setCompilePoints(e.target.value)}
+            required
+            placeholder="Total points for successful compile"
+            
+          ></Input.TextArea>
+        </Form.Item>
+        <Form.Item id="form-label" label="Submission Time">
+          <Input.TextArea
+            onChange={e => setTimePoints(e.target.value)}
+            required
+            placeholder="Total points for successful compile"
+            
+          ></Input.TextArea>
+        </Form.Item>
+        <Form.Item id="form-label" label="Readability">
+          <Input.TextArea
+            onChange={e => setReadablePoints(e.target.value)}
+            
+            required
+            placeholder="Total points for successful compile"
+            
+          ></Input.TextArea>
+        </Form.Item>
+        <Form.Item id="form-label" label="Total">
+          <Input.TextArea
+              onChange={e => setTotalPoints(e.target.value)}
+              value={((parseInt(compilePoints) || 0) + (parseInt(timePoints) || 0) + (parseInt(readablePoints) || 0))}
+            required
+            placeholder="Total points for successful compile"
+            
+          ></Input.TextArea>
+        </Form.Item>
+
         <h3 id="subtitle">Additional Information</h3>
         <Form.Item
           id="form-label"

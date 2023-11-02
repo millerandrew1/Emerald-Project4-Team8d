@@ -248,9 +248,10 @@ export default function ContentCreatorCanvas({
   };
 
   const handleCompile = async () => {
+    
     if (showConsole || showPlotter) {
       message.warning(
-        'Close Serial Monitor and Serial Plotter before uploading your code'
+        'Close Serial Monitor and Serial Plotter before uploading your code Submitted'
       );
     } else {
       if (typeof window['port'] === 'undefined') {

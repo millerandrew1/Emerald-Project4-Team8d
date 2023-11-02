@@ -245,7 +245,7 @@ export default function PublicCanvas({ activity, isSandbox }) {
                       />
                       {hoverCompile && (
                         <div className='popup ModalCompile'>
-                          Upload to Arduino
+                          Upload to Arduinorjfjjj
                         </div>
                       )}
 
